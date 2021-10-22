@@ -1,0 +1,14 @@
+<% if @message != ''%>
+    alert("<%= @message %>");
+<% else %>
+    <% if @book.state == 1 %>
+        alert('Libro Reservado!!');
+    <% elsif @book.state == 2 %>
+        alert('Libro Pagado!!');
+    <% else %>    
+        alert('Libro Eliminado :(');
+    <% end %>   
+<% end %> 
+
+$(".books_list").html("");
+$(".books_list").html("<%= j render @books %>");
